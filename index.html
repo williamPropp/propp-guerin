@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propp+Guerin</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1>PROPP + GUERIN</h1>
+    <div class="slideshow">
+        <!-- <img class="slides" src="images/slides/jonesday.jpg">
+        <img class="slides" src="images/slides/klgates.jpg">
+        <img class="slides" src="images/slides/mc2restaurant.jpg">
+        <img class="slides" src="images/slides/penthouse.jpg">
+        <img class="slides" src="images/slides/restorationhardware.jpg"> -->
+        <div class="slide">
+            <img id="slideImage" src="imageURLgoeshere" alt="imageALTgoeshere">
+            <h2 id="slideTitle" >title goes here</h2>
+            <p id="slideDescription" >description goes here</p>
+            <p id="slideDate" >date goes here</p>
+        </div>
+        <div class="slide-arrows">
+            <button class="slide-left" onclick="slideScroll(-1)">&#10094;</button>
+            <button class="slide-right" onclick="slideScroll(+1)">0x276F</button>
+        </div>
+        <div class="carousel-controls">
+            <button class="dot-0" onclick="slideScroll(0)">&#9679;</button>
+            <button class="dot-1" onclick="slideScroll(1)">&#9675;</button>
+            <button class="dot-2" onclick="slideScroll(2)">&#9675;</button>
+            <button class="dot-3" onclick="slideScroll(3)">&#9675;</button>
+        </div>
+    </div>
+    
+    <script>
+        // var slideIndex = 1;
+        // showSlide(slideIndex);
+
+        // function slideScroll(n) {
+        //     showSlide(slideIndex += n);
+        // }
+
+        // function showSlide(n) {
+        //     var i;
+        //     var x = document.getElementsByClassName("slides");
+        //     if (n > x.length) {slideIndex = 1}
+        //     if (n < 1) {slideIndex = x.length} ;
+        //     for (i = 0; i < x.length; i++) {
+        //         x[i].style.display = "none";
+        //     }
+        //     x[slideIndex-1].style.display = "block";
+        // }
+        
+
+        var slideMap = [
+            {
+                name: "penthouse",
+                title: "penthouse SF",
+                description: "this is the penthouse",
+                date: "01122002",
+            },
+            {
+                name: "mc2restaurant",
+                title: "MC2 Restaurant",
+                description: "this is the restaurant",
+                date: "01122008",
+            },
+            {
+                name: "restorationhardware",
+                title: "Restoration Hardware",
+                description: "this is restoration hardware project",
+                date: "01122009",
+            },
+            {
+                name: "jonesday",
+                title: "Jones Day Project",
+                description: "this is the jonesday project",
+                date: "11322012",
+            },
+        ]
+
+        var slideIndex = 0;
+        showSlide(slideIndex);
+
+        function slideScroll(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            var i;
+            var slide = document.getElementsByClassName("slide");
+            if (n == slideMap.length) {slideIndex = 0}
+            if (n < 0) {slideIndex = slideMap.length - 1} ;
+            
+            let imageURLprefix = "images/slides/"
+            let newSlideName = slideMap[n].name;
+            let newSlideTitle = slideMap[n].title;
+            let newSlideDescription = slideMap[n].description;
+            let newSlideDate = slideMap[n].date;
+
+            document.getElementById("slideImage").src= imageURLprefix + newSlideName + ".jpg";
+            document.getElementById("slideTitle").text= newSlideTitle;
+            document.getElementById("slideDescription").text= newSlideDescription;
+            document.getElementById("slideDate").text= newSlideDate;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+:root {
+    --variable: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    display: inline;
+}
+
+.slides {
+    // display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+}
+
+.slide-arrows {
+    // display: flex;
+    // justify-content: center;
+    // display: block;
+    position: absolute;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+    bottom: 50vh;
+
+    .slide-left {
+        // display: flex;
+        // justify-content: left;
+        float: left;
+    }
+    
+    .slide-right {
+        // display: flex;
+        // justify-content: right;
+        float: right;
+    }
+}
