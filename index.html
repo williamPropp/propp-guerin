@@ -8,141 +8,49 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>PROPP + GUERIN</h1>
-    <div class="slideshow">
-        <!-- <img class="slides" src="images/slides/jonesday.jpg">
-        <img class="slides" src="images/slides/klgates.jpg">
-        <img class="slides" src="images/slides/mc2restaurant.jpg">
-        <img class="slides" src="images/slides/penthouse.jpg">
-        <img class="slides" src="images/slides/restorationhardware.jpg"> -->
-        <div class="slide">
-            <img id="slideImage" src="images/slides/penthouse.jpg" alt="imageALTgoeshere">
+
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">PROPP + GUERIN</a>
+
+            <img id="mobile-cta" class="mobile-menu" src="icons/menu.svg" alt="Open Navigation">
+
+            <nav id="nav-buttons">
+                <img id="mobile-exit" class="mobile-menu-exit" src="icons/exit.svg" alt="Close Navigation">
+                
+                <ul class="primary-nav">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script src="js/navbar.js"></script>
+
+    <div id="slideshow" class="slideshow">
+        <div class="slide-arrows">
+            <button class="arrow-buttons slide-left" onclick="slideScroll(-1)">&#10094;</button>
+            <button class="arrow-buttons slide-right" onclick="slideScroll(+1)">&#10095;</button>
+        </div>
+        <div class="slideInfo">
+            <!-- <img id="slideImage" src="images/slides/penthouse.jpg" alt="imageALTgoeshere"> -->
             <h2 id="slideTitle" >title goes here</h2>
             <p id="slideDescription" >description goes here</p>
             <p id="slideDate" >date goes here</p>
         </div>
-        <div class="slide-arrows">
-            <button class="slide-left" onclick="slideScroll(-1)">&#10094;</button>
-            <button class="slide-right" onclick="slideScroll(+1)">&#10095;</button>
+        <div id="carousel-bullets" class="carousel-bullets">
+            <button id="dot-0" class="carousel-buttons" onclick="showSlide(0)">&#9679;</button>
         </div>
-        <div id="carousel-controls">
-            <button id="dot-0" onclick="showSlide(0)">&#9679;</button>
-        </div>
+        <!-- <img id="slide-0" class="slide" src="images/slides/penthouse.jpg" alt="penthouse project"></img> -->
     </div>
-    
-    <script>
-        // var slideIndex = 1;
-        // showSlide(slideIndex);
+    <script src="js/slideshow.js"></script>
+    <!-- <script src="js/slideshow-drag.js"></script> -->
 
-        // function slideScroll(n) {
-        //     showSlide(slideIndex += n);
-        // }
 
-        // function showSlide(n) {
-        //     var i;
-        //     var x = document.getElementsByClassName("slides");
-        //     if (n > x.length) {slideIndex = 1}
-        //     if (n < 1) {slideIndex = x.length} ;
-        //     for (i = 0; i < x.length; i++) {
-        //         x[i].style.display = "none";
-        //     }
-        //     x[slideIndex-1].style.display = "block";
-        // }
-        
-        const carouselSelectedIcon = "&#9679;";
-        const carouselUnselectedIcon = "&#9675;";
+    <div class="footer">
 
-        var slideMap = [
-            {
-                name: "penthouse",
-                title: "penthouse SF",
-                description: "this is the penthouse",
-                date: "01122002",
-            },
-            {
-                name: "mc2restaurant",
-                title: "MC2 Restaurant",
-                description: "this is the restaurant",
-                date: "01122008",
-            },
-            {
-                name: "restorationhardware",
-                title: "Restoration Hardware",
-                description: "this is restoration hardware project",
-                date: "01122009",
-            },
-            {
-                name: "jonesday",
-                title: "Jones Day Project",
-                description: "this is the jonesday project",
-                date: "11322012",
-            },
-            {
-                name: "penthouse",
-                title: "penthouse SF",
-                description: "this is the penthouse",
-                date: "01122002",
-            },
-        ]
+    </div>
 
-        var slideIndex = 0;
-        createCarousel();
-        showSlide(slideIndex);
-
-        function slideScroll(n) {
-            slideIndex += n;
-            if (slideIndex >= slideMap.length) {
-                slideIndex = 0;
-            } else if (slideIndex < 0) {
-                slideIndex = slideMap.length - 1;
-            }
-            showSlide(slideIndex);
-        }
-
-        function showSlide(n) {          
-            let imageURLprefix = "images/slides/"
-            let newSlideName = slideMap[n].name;
-            let newSlideTitle = slideMap[n].title;
-            let newSlideDescription = slideMap[n].description;
-            let newSlideDate = slideMap[n].date;
-
-            document.getElementById("slideImage").src= imageURLprefix + newSlideName + ".jpg";
-            document.getElementById("slideImage").alt= newSlideTitle;
-            document.getElementById("slideTitle").innerHTML= newSlideTitle;
-            document.getElementById("slideDescription").innerHTML= newSlideDescription;
-            document.getElementById("slideDate").innerHTML= newSlideDate;
-
-            updateCarousel(n);
-        }
-
-        function createCarouselButton(buttonID) {
-            const newButton = "<button id=\"dot-" + buttonID +"\" onclick=\"showSlide(" + buttonID + ")\">" + carouselUnselectedIcon + "</button>";
-
-            const carouselControls = document.getElementById("carousel-controls");
-            carouselControls.innerHTML += newButton;
-        }
-
-        function createCarousel() {
-            if(slideMap.length <= 1) {
-                return;
-            } else {
-                for(let i = 1; i < slideMap.length; i++) {
-                    createCarouselButton(i);
-                }
-            }
-        }
-
-        function updateCarousel(n) {
-            // let buttonArray = [];
-            // for(let i = 1; i < slideMap.length; i++) {
-            //     buttonArray.push(document.getElementById("dot-" + i));
-            // }
-            // console.log(buttonArray);
-            for(let i = 0; i < slideMap.length; i++) {
-                document.getElementById("dot-" + i).innerHTML = carouselUnselectedIcon;
-            }
-            document.getElementById("dot-" + n).innerHTML = carouselSelectedIcon;
-        }
-    </script>
 </body>
 </html>

@@ -1,44 +1,204 @@
 :root {
     --variable: #000000;
+    --light-primary: #e3e4e0;
+    --primary: #c7c7bb;
+    --dark-primary: #aaaa9f;
+    --primary-text-color: #3e423d;
+
+    --light: 300;
+    --regular: 400;
+    --medium: 600;
+    --bold: 700;
 }
 
-body {
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-Medium.ttf");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-Book.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-Light.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-XLight.ttf");
+    font-weight: 200;
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+//default selector formatting
+ul {
+    list-style-type: none; 
     margin: 0;
     padding: 0;
+    color: white;
+}
+
+
+body {
+    background-color: black;
+    font-family: "Gotham", ;
+    margin: 0;
+    padding: 0;
+    scrollbar-gutter: stable both-edges;
+}
+
+a {
+    color: var(--primary-text-color);;
 }
 
 h1 {
     display: inline;
 }
 
-.slides {
-    // display: block;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100vw;
-    height: auto;
-    overflow: hidden;
-}
+//mobile formatting//
+.navbar {
+    background: var(--primary);
+    padding: 1em;
 
-.slide-arrows {
-    // display: flex;
-    // justify-content: center;
-    // display: block;
-    position: absolute;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100vw;
-    bottom: 50vh;
-
-    .slide-left {
-        // display: flex;
-        // justify-content: left;
-        float: left;
+    .container {
+        display: flex;
+        place-content: space-between;
     }
     
-    .slide-right {
-        // display: flex;
-        // justify-content: right;
-        float: right;
+    .logo {
+        text-decoration: none;
+        font-weight: var(--regular);
+        color: var(--primary-text-color);
+        font-size: 2em;
+
+        span {
+            font-weight: var(--medium);
+        }
+    }
+
+    .mobile-menu {
+        // padding: 2%;
+        padding: 0;
+        width: 2em;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        transition: width 2s;
+        position: fixed;
+        z-index: 999;
+        width: 40%;
+        right: 0;
+        top: 0;
+        background: var(--dark-primary);
+        height: 100vh;
+        padding: 1em;
+
+        ul {
+            color: var(--primary-text-color);
+        }
+
+        .mobile-menu-exit {
+            margin: .5em;
+            width: 1.6em;
+            cursor: pointer;
+            float: right;
+        }
+
+        .primary-nav {
+            margin-top: 5em;
+        }
+
+        .secondary-nav {
+            margin: 0;
+            padding-top: 2em;
+            a {
+                color: white;
+            }
+        }
+
+        li {
+        
+            a {
+                color: var(--primary-text-color);
+                text-decoration: none;
+                display: block;
+                padding: .5em;
+                padding-top: 0.2em;
+                font-size: 1.3em;
+                text-align: right;
+    
+                &:hover {
+                    font-weight: var(--medium);
+                }
+            }
+        }
+    }
+}
+
+//open & close mobile nav-menu
+nav.menu-btn {
+    display: block;
+}
+
+button {
+    font-size: larger;
+    background-color: #8c8c8c60;
+    color: white;
+    border-style: none;
+    // border-style: solid;
+    border-color: #9d9d9d60;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100vh;
+
+    -webkit-transition: background-image 0.25s ease-in-out;
+    transition: background-image 0.25s ease-in-out;
+
+    // .slide {
+    //     pointer-events: none;
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     z-index: 3;
+    // }
+
+    .slideInfo {
+        color: white;
+    }
+
+    .slide-arrows {
+        display: flex;
+        place-content: space-between;
+        .arrow-buttons {
+            cursor: pointer;
+        }
+    }
+
+    .carousel-bullets {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0vh;
+        // left: -50vw;
+        .carousel-buttons {
+            margin: 5px;
+        }
     }
 }
