@@ -48,16 +48,28 @@ function slideScroll(n) {
     showSlide(slideIndex);
 }
 
+function formatSlideInfo(date) {
+    let monthsArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let monthIndex =  parseInt( String(date[0]) + String(date[1]) );
+    let month = monthsArray[monthIndex];
+
+    let day = String(date[2]) + String(date[3]);
+
+    let year = String(date[4]) + String(date[5]) + String(date[6]) + String(date[7]);
+
+    // return month + " " + day + ", " + year;
+    return `${month} ${day}, ${year}`;
+
+}
+
 function showSlide(n) {    
     let imageURLprefix = "url(\"../images/slides/"
     let newSlideName = slideMap[n].name;
     let newSlideTitle = slideMap[n].title;
     let newSlideDescription = slideMap[n].description;
-    let newSlideDate = slideMap[n].date;
+    let newSlideDate = formatSlideInfo(slideMap[n].date);
 
-    // document.getElementById("slideImage").src = imageURLprefix + newSlideName + ".jpg";
-    document.getElementById("slideshow").style["background-image"] = imageURLprefix + newSlideName + ".jpg\")";
-    // document.getElementById("slideImage").alt = newSlideTitle;
+    document.getElementById("slideshow").style["background-image"] = `${imageURLprefix}${newSlideName}.jpg\")`;
     document.getElementById("slideshow").style["background-image"].alt = newSlideTitle;
     document.getElementById("slideTitle").innerHTML = newSlideTitle;
     document.getElementById("slideDescription").innerHTML = newSlideDescription;

@@ -159,6 +159,7 @@ button {
     background-color: #8c8c8c60;
     color: white;
     border-style: none;
+    border-radius: 5%;
     // border-style: solid;
     border-color: #9d9d9d60;
 }
@@ -170,33 +171,46 @@ button {
     -webkit-transition: background-image 0.25s ease-in-out;
     transition: background-image 0.25s ease-in-out;
 
-    // .slide {
-    //     pointer-events: none;
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     z-index: 3;
-    // }
-
     .slideInfo {
+        padding: 0 4vw 0 3vw;
+        align-self: flex-start;
+        position: absolute;
+        bottom: 10vh;
         color: white;
+        background-color: #00000060;
     }
 
     .slide-arrows {
         display: flex;
         place-content: space-between;
+        padding: 40vh 0.75vw 0;
+
+        // position: absolute;
+        // top: 50%;
+        // transform: translateY(-50%);
+
+        font-size: 2em;
+
         .arrow-buttons {
             cursor: pointer;
         }
+        // .slide-left {
+        //     position: absolute;
+        //     left: 0%;
+        //     background-color: green;
+        // }
+        // .slide-right {
+        //     position: absolute;
+        //     right: 100%;
+        //     background-color: red;
+        // }
     }
 
     .carousel-bullets {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: absolute;
         bottom: 0vh;
-        // left: -50vw;
+        left: 50vw;
+        transform: translatex(-50%);
         .carousel-buttons {
             margin: 5px;
         }
