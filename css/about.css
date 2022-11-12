@@ -40,24 +40,6 @@
   font-weight: 200;
 }
 
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -67,6 +49,7 @@ ul {
 
 body {
   background-color: black;
+  background-image: url(../images/slides/mc2restaurant.jpg);
   font-family: "Gotham";
   margin: 0;
   padding: 0;
@@ -137,41 +120,22 @@ button {
   border-color: #9d9d9d60;
 }
 
-.slideshow {
-  width: 100%;
-  height: 100vh;
-  -webkit-transition: background-image 0.25s ease-in-out;
-  transition: background-image 0.25s ease-in-out;
-}
-
-.slideshow .slideInfo {
-  padding: 0 4vw 0 3vw;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  position: absolute;
-  bottom: 10vh;
+.about-container {
   color: white;
-  background-color: #00000060;
+  background-color: #00000099;
+  margin: 5vh 15vw;
+  padding: 2vw;
 }
 
-.slideshow .slide-arrows {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  place-content: space-between;
-  padding: 40vh 0.75vw 0;
-  font-size: 2em;
+.about-container h2 {
+  margin: 0;
 }
 
-.slideshow .carousel-bullets {
-  position: absolute;
-  bottom: 0vh;
-  left: 50vw;
-  -webkit-transform: translatex(-50%);
-          transform: translatex(-50%);
+.about-container .awards h3 {
+  margin-bottom: 1vh;
 }
 
-.slideshow .carousel-bullets .carousel-buttons {
-  margin: 5px;
+.about-container .awards p {
+  margin: 0;
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=about.css.map */

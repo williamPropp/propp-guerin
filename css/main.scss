@@ -1,9 +1,9 @@
 :root {
     --variable: #000000;
-    --light-primary: #e3e4e0;
-    --primary: #c7c7bb;
-    --dark-primary: #aaaa9f;
-    --primary-text-color: #3e423d;
+    --light-primary: #ececec;
+    --primary: #cccccc;
+    --dark-primary: #acacac;
+    --primary-text-color: #444444;
 
     --light: 300;
     --regular: 400;
@@ -60,6 +60,7 @@ body {
 }
 
 a {
+    text-decoration:none; 
     color: var(--primary-text-color);;
 }
 
@@ -68,6 +69,7 @@ h1 {
 }
 
 //mobile formatting//
+
 .navbar {
     background: var(--primary);
     padding: 1em;
@@ -88,65 +90,82 @@ h1 {
         }
     }
 
-    .mobile-menu {
-        // padding: 2%;
-        padding: 0;
-        width: 2em;
-        cursor: pointer;
+    .desktop-nav-items {
+        display: inline;
+        a {
+            line-height: 45px;
+            font-size: 22px;
+            padding: 1vh 1vw;
+        }
     }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    // .mobile-menu {
+    //     // padding: 2%;
+    //     padding: 0;
+    //     width: 2em;
+    //     cursor: pointer;
+    // }
 
     nav {
         display: none;
-        transition: width 2s;
-        position: fixed;
-        z-index: 999;
-        width: 40%;
-        right: 0;
-        top: 0;
-        background: var(--dark-primary);
-        height: 100vh;
-        padding: 1em;
-
-        ul {
-            color: var(--primary-text-color);
-        }
-
-        .mobile-menu-exit {
-            margin: .5em;
-            width: 1.6em;
-            cursor: pointer;
-            float: right;
-        }
-
-        .primary-nav {
-            margin-top: 5em;
-        }
-
-        .secondary-nav {
-            margin: 0;
-            padding-top: 2em;
-            a {
-                color: white;
-            }
-        }
-
-        li {
-        
-            a {
-                color: var(--primary-text-color);
-                text-decoration: none;
-                display: block;
-                padding: .5em;
-                padding-top: 0.2em;
-                font-size: 1.3em;
-                text-align: right;
-    
-                &:hover {
-                    font-weight: var(--medium);
-                }
-            }
-        }
     }
+
+    // nav {
+    //     display: none;
+    //     transition: width 2s;
+    //     position: fixed;
+    //     z-index: 999;
+    //     width: 40%;
+    //     right: 0;
+    //     top: 0;
+    //     background: var(--dark-primary);
+    //     height: 100vh;
+    //     padding: 1em;
+
+    //     ul {
+    //         color: var(--primary-text-color);
+    //     }
+
+    //     .mobile-menu-exit {
+    //         margin: .5em;
+    //         width: 1.6em;
+    //         cursor: pointer;
+    //         float: right;
+    //     }
+
+    //     .primary-nav {
+    //         margin-top: 5em;
+    //     }
+
+    //     .secondary-nav {
+    //         margin: 0;
+    //         padding-top: 2em;
+    //         a {
+    //             color: white;
+    //         }
+    //     }
+
+    //     li {
+        
+    //         a {
+    //             color: var(--primary-text-color);
+    //             text-decoration: none;
+    //             display: block;
+    //             padding: .5em;
+    //             padding-top: 0.2em;
+    //             font-size: 1.3em;
+    //             text-align: right;
+    
+    //             &:hover {
+    //                 font-weight: var(--medium);
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 //open & close mobile nav-menu
@@ -155,12 +174,12 @@ nav.menu-btn {
 }
 
 button {
+    cursor: pointer;
     font-size: larger;
     background-color: #8c8c8c60;
     color: white;
     border-style: none;
     border-radius: 5%;
-    // border-style: solid;
     border-color: #9d9d9d60;
 }
 
@@ -185,25 +204,7 @@ button {
         place-content: space-between;
         padding: 40vh 0.75vw 0;
 
-        // position: absolute;
-        // top: 50%;
-        // transform: translateY(-50%);
-
         font-size: 2em;
-
-        .arrow-buttons {
-            cursor: pointer;
-        }
-        // .slide-left {
-        //     position: absolute;
-        //     left: 0%;
-        //     background-color: green;
-        // }
-        // .slide-right {
-        //     position: absolute;
-        //     right: 100%;
-        //     background-color: red;
-        // }
     }
 
     .carousel-bullets {

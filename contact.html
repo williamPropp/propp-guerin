@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propp+Guerin</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
 
@@ -32,25 +32,24 @@
     </div>
     <script src="js/navbar.js"></script>
 
-    <div id="slideshow" class="slideshow">
-        <div class="slide-arrows">
-            <button class="arrow-buttons slide-left" onclick="slideScroll(-1)">&#11207;</button>
-            <button class="arrow-buttons slide-right" onclick="slideScroll(+1)">&#11208;</button>
-        </div>
-        <div class="slideInfo">
-            <!-- <img id="slideImage" src="images/slides/penthouse.jpg" alt="imageALTgoeshere"> -->
-            <h2 id="slideTitle" >title goes here</h2>
-            <p id="slideDescription" >description goes here</p>
-            <p id="slideDate" >date goes here</p>
-        </div>
-        <div id="carousel-bullets" class="carousel-bullets">
-            <button id="dot-0" class="carousel-buttons" onclick="showSlide(0)">&#9679;</button>
-        </div>
-        <!-- <img id="slide-0" class="slide" src="images/slides/penthouse.jpg" alt="penthouse project"></img> -->
-    </div>
-    <script src="js/slideshow.js"></script>
-    <!-- <script src="js/slideshow-drag.js"></script> -->
+    <div class="contact-container">
+        <div class="contact-left">
+            <h2>Contact</h2>
 
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+
+                <label for="name">Email</label>
+                <input type="text" id="email" name="email">
+
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                <input type="submit" class="send-message-cta" value="Send message">
+            </form>
+        </div>
+    </div>
 
     <div class="footer">
 
