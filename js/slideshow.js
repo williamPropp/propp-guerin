@@ -63,13 +63,15 @@ function formatSlideInfo(date) {
 }
 
 function showSlide(n) {    
-    let imageURLprefix = "url(\"../images/slides/"
+    let imageURLprefix = "images/slides/"
     let newSlideName = slideMap[n].name;
+    let imageURLsuffix = ".jpg"
     let newSlideTitle = slideMap[n].title;
     let newSlideDescription = slideMap[n].description;
     let newSlideDate = formatSlideInfo(slideMap[n].date);
 
-    document.getElementById("slideshow").style["background-image"] = `${imageURLprefix}${newSlideName}.jpg\")`;
+    document.getElementById("slideshow").style["background-image"] = "url(\'" + imageURLprefix + newSlideName + imageURLsuffix +"\')";
+    console.log(document.getElementById("slideshow").style["background-image"]);
     document.getElementById("slideshow").style["background-image"].alt = newSlideTitle;
     document.getElementById("slideTitle").innerHTML = newSlideTitle;
     document.getElementById("slideDescription").innerHTML = newSlideDescription;
